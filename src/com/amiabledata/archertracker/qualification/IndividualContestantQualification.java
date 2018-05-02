@@ -8,6 +8,7 @@ public class IndividualContestantQualification {
     private String Name;
     private Integer Ranking;
     private ArrayList<IndividualQualificationScore> Scores;
+    private ArrayList<Integer> Total;
 
     public IndividualContestantQualification() {
         this.Name = new String();
@@ -40,6 +41,7 @@ public class IndividualContestantQualification {
     public void setScores(ArrayList<IndividualQualificationScore>value) {
         this.Scores = new ArrayList<IndividualQualificationScore>();
         this.Scores.addAll(value);
+	this.setAllTotal();
     }
 
     public void addScore(IndividualQualificationScore value) {
@@ -53,4 +55,28 @@ public class IndividualContestantQualification {
     public IndividualQualificationScore getScore(Integer Index) {
         return this.Scores.get(Index);
     }
+
+    private void setAllTotal(){
+	for(int index = 0; index < this.Scores.size(); index++){
+		if(index == 0){
+			this.Total.add(this.Scores.get(index).getSum());
+		}
+		else{
+			this.Total.add((this.Total.get(index-1)+this.Scores.get(index).getSum()));
+		}
+	}
+    }
+
+    public ArrayList<Integer> getAllTotal(){
+	return this.Total;
+    }
+
+    public Integer getSubTotal(Integer SetNumber){
+	return this.Total.get(SetNumber);    
+    }
+
+    public Integer getTotal(){
+	return this.Total.get(this.Total.size()-1);
+    }
+
 }
