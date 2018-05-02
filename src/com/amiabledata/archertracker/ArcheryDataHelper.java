@@ -120,6 +120,41 @@ public class ArcheryDataHelper {
 		return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getQualificationState().getContestants(Contestant_Index).getScore(Set_Index).getAmountOfX();
 	}
 	// IndividualRound Qualification End
+        
+        //Individual Match Round Start 
+         public String getIndividualMatchesStage(Integer Competition_Index, Integer Entry_Index, Integer Match_Index){
+          return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getStage();
+       } 
+         public String getIndividualMatchesStageFirstContestantName(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getFirstContestant();
+       }
+       public String getIndividualMatchesStageSecondContestantName(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getSecondContestant();
+       }
+       public Integer getIndividualMatchesStageSetNumber(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getSetNumber();
+       }
+       public Integer getIndividualMatchesStageFirstContestantArrowPoints(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index, Integer Arrow_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getFirstContestantArrows(Arrow_Index);
+       }
+       public Integer getIndividualMatchesStageFirstContestantAccumulativePoints(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getFirstContestantAccumulativeSetPoints();
+       }
+       public Integer getIndividualMatchesStageFirstContestantSetPoints(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getFirstContestantSetPoints();
+       }
+       public Integer getIndividualMatchesStageSecondContestantArrowPoints(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index, Integer Arrow_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getSecondContestantArrows(Arrow_Index);
+       }
+       public Integer getIndividualMatchesStageSecondContestantAccumulativePoints(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getSecondContestantAccumulativeSetPoints();
+       }
+       public Integer getIndividualMatchesStageSecondContestantSetPoints(Integer Competition_Index, Integer Entry_Index, Integer Match_Index, Integer Contestant_Index, Integer Set_Index){
+           return getData().getAllDataList().get(Competition_Index).getIndividualEntry(Entry_Index).getMatchState(Match_Index).getMatches(Contestant_Index).getScore(Set_Index).getSecondContestantSetPoints();
+                   
+       }
+       //Individual Match Round End
+           
 	// IndividualRound Entry End
 	
 	// TeamRound Entry Start
