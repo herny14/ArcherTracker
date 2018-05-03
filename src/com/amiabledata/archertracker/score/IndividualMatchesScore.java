@@ -94,5 +94,5 @@ public class IndividualMatchesScore extends Score {
 
     public Integer getSecondContestantSetPoints() {
         return this.secondContestantSetPoints;
-    }
+}
 }
